@@ -301,7 +301,7 @@ object Status {
     def valueOf(value: String): Code = {
       values.find(_.name() == value) match {
         case Some(code) => code
-        case _ =>
+        case _          =>
           throw new IllegalArgumentException(s"Unrecognized code: $value")
       }
     }

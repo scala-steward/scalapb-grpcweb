@@ -104,7 +104,7 @@ final class GrpcWebServicePrinter(
 
   private[this] def clientMethodImpl(m: MethodDescriptor): PrinterEndo = { p =>
     val (maybeObserver, methodName) = (m.streamType match {
-      case StreamType.Unary => ("", "asyncUnaryCall")
+      case StreamType.Unary           => ("", "asyncUnaryCall")
       case StreamType.ServerStreaming =>
         (", responseObserver", "asyncServerStreamingCall")
       case _ => ???
